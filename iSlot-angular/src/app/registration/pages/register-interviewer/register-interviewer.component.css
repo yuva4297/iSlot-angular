@@ -1,0 +1,19 @@
+.container
+{
+    align-content: center;
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 10%;
+    border: solid  rebeccapurple;
+    border-radius: 20px;
+}
+.center
+{
+    margin-top: 20px;
+    margin-bottom:20px;
+}
+.header
+{
+    color: #41af4a;
+}
