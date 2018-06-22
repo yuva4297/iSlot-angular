@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { SkillspageComponent } from './skillspage/skillspage.component';
+import { RouterModule } from "@angular/router";
+import { routes } from "./interviewer.routes";
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes)
   ],
-  declarations: []
+  declarations: [SkillspageComponent]
 })
 export class InterviewerModule { }
