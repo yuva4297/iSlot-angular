@@ -1,0 +1,38 @@
+ .btn-default{
+  width: 80px;
+  height: 70px;
+  border: 2px solid black;
+}
+div {
+    margin-left: 50px;
+}
+
+.glyphicon-plus-sign{
+    float: right;
+    margin-right: 80px;
+    font-size: 50px;    
+    }
+p{
+    margin-top: 30px;
+    margin-left: 30px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.fa-line-chart{
+    font-size: 30px;
+
+}
+.glyphicon-option-vertical{
+    font-size: 30px;
+}
+
+.container{
+    margin-top: 30px;
+    border-block-end-color: black;
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 8px grey;
+    background-color: white;
+}
