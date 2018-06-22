@@ -8,9 +8,14 @@ export const routes: Route[] = [
         
     },
     {
+        path: 'islot-common',
+        loadChildren: 'app/islot-common/islot-common.module#IslotCommonModule'
+    },
+    
+    {
         path: '',
         loadChildren: 'app/registration/registration.module#RegistrationModule'
-    },
+    }
     
 ]
     
