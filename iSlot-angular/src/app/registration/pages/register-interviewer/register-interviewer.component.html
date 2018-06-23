@@ -1,33 +1,81 @@
 <head>
-  
-</head><div class="container">
-    <h2><p class="header">Register As An Interviewer</p></h2>
-      <form [formGroup]="registerInterviewerForm">
-          <div class="input-group center">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input id="username" type="text" class="form-control" name="username" formControlName="username" placeholder="User Name">
-          </div>
-          <div  class="alert alert-danger" *ngIf="registerInterviewerForm.get('username').touched && registerInterviewerForm.get('username').errors">Please Enter the valid User name</div>
-            
-          <div class="input-group center">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" ></i></span>
-            <input id="email" type="text" class="form-control" name="email" formControlName="email" placeholder="Email">
-          </div>
-          <div  class="alert alert-danger" *ngIf="registerInterviewerForm.get('email').touched && registerInterviewerForm.get('email').errors">Please Enter the valid Email Id</div>
-          
 
-          <div class="input-group center">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-              <input id="mobile" type="password" class="form-control" name="mobile" placeholder="Mobile Number">
-            </div>
-          <div class="input-group center">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-          </div>
-          <div>
-
-              <ss-multiselect-dropdown [options]="myOptions"  [(ngModel)]="optionsModel" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
-            </div>
-            <button type="button" class="btn btn-success center">Register</button>
-          </form>
+</head>
+<div class="container">
+  <h2>
+    <p class="header">Register As An Interviewer</p>
+  </h2>
+  <form [formGroup]="registerInterviewerForm">
+    <div class="input-group center">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-user"></i>
+      </span>
+      <input id="username" type="text" class="form-control" name="username" formControlName="username" placeholder="User Name">
     </div>
+    <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('username').touched && registerInterviewerForm.get('username').errors">Please Enter the valid User name</div>
+
+    <div class="input-group center">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-envelope"></i>
+      </span>
+      <input id="email" type="text" class="form-control" name="email" formControlName="email" placeholder="Email">
+    </div>
+    <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('email').touched && registerInterviewerForm.get('email').errors">Please Enter the Valid Virtusa Email Id</div>
+
+    <!-- <div  class="alert alert-danger" *ngIf="registerInterviewerForm.get('email').errors.pattern">Please Enter the valid VirtusaEmail Id</div> -->
+
+    <div class="input-group center">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-phone"></i>
+      </span>
+      <input id="mobile" type="text" class="form-control" name="mobile" formControlName="mobile" placeholder="Mobile Number">
+    </div>
+    <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('mobile').touched && registerInterviewerForm.get('mobile').errors">Please Enter the Valid Mobile Number</div>
+
+    <div class="input-group center">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-lock"></i>
+      </span>
+      <input id="password" type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
+    </div>
+
+    <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('password').touched && registerInterviewerForm.get('password').errors">Please Enter the Password with minimum length of 6</div>
+    <div class="input-group center">
+        <div class="input-group-prepend">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-certificate"></i>
+            </span>
+            <span class="input-group-addon">Select Your Skills</span>
+            <span class="input-group-addon special">
+            <ss-multiselect-dropdown [options]="skills" formControlName="skills" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+            </span>
+        </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('skills').errors">Please Select the skills</div>
+    <div class="input-group center">
+
+      <div class="input-group-prepend">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-globe"></i>
+        </span>
+        <span class="input-group-addon">Select Your Location</span>
+
+
+        <span class="input-group-addon special">
+          <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
+            <option></option>
+            <option>chennai</option>
+            <option>Hyde</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </span>
+      </div>
+    </div>
+
+    <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('location').touched && registerInterviewerForm.get('location').errors">Please Select the Location</div>
+
+    <button type="button" class="btn btn-success center">Register</button>
+  </form>
+</div>

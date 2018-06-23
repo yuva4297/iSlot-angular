@@ -9,22 +9,37 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RegisterInterviewerComponent implements OnInit {
   optionsModel: number[];
-    myOptions: IMultiSelectOption[];
+    skills: IMultiSelectOption[];
+    locations: Array<any>;
     registerInterviewerForm : FormGroup;
   constructor() {
     this.registerInterviewerForm =new FormGroup(
       {
         username: new FormControl('',Validators.required),
         email: new FormControl('', [Validators.required, Validators.pattern(/^[a-z|A-Z][a-z|A-Z|0-9|]+@virtusa.com/)]),
+        mobile: new FormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]{9}/)]),
+        password: new FormControl('',[Validators.required, Validators.minLength(6)]),
+        skills: new FormControl('', [Validators.required]),
+        location: new FormControl('',[Validators.required])
       }
     )
    }
 
   ngOnInit() {
-    this.myOptions = [
-      { id: 1, name: 'Option 1' },
-      { id: 2, name: 'Option 2' },
+    this.skills = [
+      { id: 1, name: 'Java' },
+      { id: 2, name: 'CSS' },
   ];
+  this.locations = [
+    {
+      id: 1,
+      name: "Chennai"
+    },
+    {
+      id: 2,
+      name: "Hyderabad"
+    }
+  ]
   }
   onChange() {
     console.log(this.optionsModel);
