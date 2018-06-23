@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { routes } from "./app.routes";
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { routes } from "./app.routes";
   ],
   imports: [
     BrowserModule,
+    MultiselectDropdownModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
