@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register-interviewer',
@@ -6,11 +8,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register-interviewer.component.css']
 })
 export class RegisterInterviewerComponent implements OnInit {
-
-  constructor() { }
+  optionsModel: number[];
+    skills: IMultiSelectOption[];
+    locations: Array<any>;
+    registerInterviewerForm : FormGroup;
+  constructor() {
+    this.registerInterviewerForm =new FormGroup(
+      {
+        username: new FormControl('',Validators.required),
+        email: new FormControl('', [Validators.required, Validators.pattern(/^[a-z|A-Z][a-z|A-Z|0-9|]+@virtusa.com/)]),
+        mobile: new FormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]{9}/)]),
+        password: new FormControl('',[Validators.required, Validators.minLength(6)]),
+        skills: new FormControl('', [Validators.required]),
+        location: new FormControl('',[Validators.required])
+      }
+    )
+   }
 
   ngOnInit() {
+    this.skills = [
+      { id: 1, name: 'Java' },
+      { id: 2, name: 'CSS' },
+  ];
+  this.locations = [
+    {
+      id: 1,
+      name: "Chennai"
+    },
+    {
+      id: 2,
+      name: "Hyderabad"
+    }
+  ]
   }
+  onChange() {
+    console.log(this.optionsModel);
+}
   // Material Select Initialization
 
 
