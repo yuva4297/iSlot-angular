@@ -22,7 +22,7 @@
     </div>
     <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('email').touched && registerInterviewerForm.get('email').errors">Please Enter the Valid Virtusa Email Id</div>
 
-    <!-- <div  class="alert alert-danger" *ngIf="registerInterviewerForm.get('email').errors.pattern">Please Enter the valid VirtusaEmail Id</div> -->
+   
 
     <div class="input-group center">
       <span class="input-group-addon">
@@ -64,11 +64,8 @@
         <span class="input-group-addon special">
           <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
             <option></option>
-            <option>chennai</option>
-            <option>Hyde</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option *ngFor="let location of locations" value="location.id">{{location.name}}</option>
+           
           </select>
         </span>
       </div>

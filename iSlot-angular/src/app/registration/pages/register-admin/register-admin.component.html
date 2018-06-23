@@ -1,1 +1,67 @@
+<head>
 
+</head>
+<div class="container">
+    <h2>
+        <p class="header">Register As An Admin</p>
+    </h2>
+    <form [formGroup]="registerAdminForm">
+        <div class="input-group center">
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-user"></i>
+            </span>
+            <input id="username" type="text" class="form-control" name="username" formControlName="username" placeholder="User Name">
+        </div>
+        <div class="alert alert-danger" *ngIf="registerAdminForm.get('username').touched && registerAdminForm.get('username').errors">Please Enter the valid User name</div>
+
+        <div class="input-group center">
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-envelope"></i>
+            </span>
+            <input id="email" type="text" class="form-control" name="email" formControlName="email" placeholder="Email">
+        </div>
+        <div class="alert alert-danger" *ngIf="registerAdminForm.get('email').touched && registerAdminForm.get('email').errors">Please Enter the Valid Virtusa Email Id</div>
+
+
+
+        <div class="input-group center">
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-phone"></i>
+            </span>
+            <input id="mobile" type="text" class="form-control" name="mobile" formControlName="mobile" placeholder="Mobile Number">
+        </div>
+        <div class="alert alert-danger" *ngIf="registerAdminForm.get('mobile').touched && registerAdminForm.get('mobile').errors">Please Enter the Valid Mobile Number</div>
+
+        <div class="input-group center">
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-lock"></i>
+            </span>
+            <input id="password" type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
+        </div>
+
+        <div class="alert alert-danger" *ngIf="registerAdminForm.get('password').touched && registerAdminForm.get('password').errors">Please Enter the Password with minimum length of 6</div>
+        
+        <div class="input-group center">
+
+            <div class="input-group-prepend">
+                <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-globe"></i>
+                </span>
+                <span class="input-group-addon">Select Your Location</span>
+
+
+                <span class="input-group-addon special">
+                    <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
+                        <option></option>
+                        <option *ngFor="let location of locations" value="location.id">{{location.name}}</option>
+
+                    </select>
+                </span>
+            </div>
+        </div>
+
+        <div class="alert alert-danger" *ngIf="registerAdminForm.get('location').touched && registerAdminForm.get('location').errors">Please Select the Location</div>
+
+        <button type="button" class="btn btn-success center">Register</button>
+    </form>
+</div>
