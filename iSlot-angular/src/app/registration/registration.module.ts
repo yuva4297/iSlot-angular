@@ -8,12 +8,26 @@ import { RegisterInterviewerComponent } from './pages/register-interviewer/regis
 import { LoginComponent } from './pages/login/login.component';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { NgModel, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: 'AIzaSyDMqATKNGPRrZ0K-dgfKYg74ziXIv_Xs7I',
+  authDomain: 'islot-angular.firebaseapp.com',
+  databaseURL: 'https://islot-angular.firebaseio.com',
+  projectId: "islot-angular",
+  storageBucket: "islot-angular.appspot.com",
+  messagingSenderId: "957310493987"
+};
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     MultiselectDropdownModule,
+    
+
+    AngularFireModule.initializeApp(firebaseConfig),
+
     RouterModule.forChild(routes)
   ],
   declarations: [LandingPageComponent, RegisterAdminComponent, RegisterInterviewerComponent, LoginComponent]
