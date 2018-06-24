@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   error: any;
     constructor(public af: AngularFireAuth,private router: Router) {
 
-    //   this.af.auth.s(auth => { 
+    //   this.af.auth.(auth => { 
     //   if(auth) {
     //     this.router.navigateByUrl('/admin');
     //   }
@@ -29,6 +29,25 @@ export class LoginComponent implements OnInit {
     }
   )
   }
+  onSubmit(formData) {
+    if(formData.valid) {
+      console.log(formData.value);
+      
+      this.af.auth.signInWithEmailAndPassword(
+        formData.value.email,
+        formData.value.password
+        ).then(
+        (success) => {
+        console.log(success);
+        this.router.navigate(['/admin'])
+      }).catch(
+        (err) => {
+        console.log(err);
+        this.error = err;
+      })
+    }
+  }
+
 
   ngOnInit() {
   }
