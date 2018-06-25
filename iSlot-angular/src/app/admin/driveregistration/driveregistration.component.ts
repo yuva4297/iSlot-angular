@@ -12,11 +12,13 @@ export class DriveregistrationComponent implements OnInit {
   optionsModel: number[];
   skills: IMultiSelectOption[];
   locations: Array<any>;
+  error:any={isError:false,errorMessage:''};
+
   
   constructor() {
   this.driveregistrationForm =new FormGroup(
     {
-      username: new FormControl('',Validators.required),
+      eventname: new FormControl('',Validators.required),
       joindate: new FormControl('',Validators.required),
       starttime: new FormControl('',Validators.required),
       endtime : new FormControl('',Validators.required),
@@ -46,7 +48,7 @@ export class DriveregistrationComponent implements OnInit {
     console.log(this.optionsModel);
 }
   // Material Select Initialization
-
+ 
 
 }
 
