@@ -1,52 +1,49 @@
-/* .container
+.item
 {
-    display: grid;
-    grid-template-columns:100px 100px 100px 100px;
-    grid-gap: 60px 60px;
-    margin: 20px 40px;
-    grid-template: 100px;
-} */
-.column
-{
+    height: 20vh;
+    width: 10vw;
+    border: 1px solid transparent;
     background-color: white;
     border-radius: 5px;
     text-align: center;
     display: flex; 
     flex-direction: column;
     justify-content: space-evenly;
-    box-shadow: 1px 1px 1px 1px #171515; 
-    transition-duration: 1s;
-    transition-timing-function: ease; 
-   transition-delay: 5ms; 
-    padding:30px; 
-    display: inline-block;
-    border: 1px solid transparent;
-    margin:10px 10px;
-
-}
-.item:hover
-{
-    box-shadow: 4px 4px 4px 4px #405751;
-
-}
-.row{
-  padding-bottom: 20px;
-}
-
-/* .item1
-{
-    height: 60vh;
-    width: 30vw;
-    border: 1px solid transparent;
-    background-color: white;
-    border-radius: 5px; 
-     text-align: center;
-    display: inline; 
-    flex-direction: column;
-    justify-content: space-evenly;
-    box-shadow: 1px 1px 4px 4px black; 
+    box-shadow: 1px 1px 1px 1px black; 
     transition-duration: 1s;
     transition-timing-function: ease;
     transition-delay: 5ms;
+
+  }
+.item:hover
+{
+    box-shadow: 4px 4px #405751;
+
 }
-  */
+.glyphicon.glyphicon-trash
+{
+  float:right;
+  color: blue;
+}
+.row
+{
+  padding-top: 50px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+#textfield{
+  border-color: white;border-style: none;
+}
+
+#tile{
+  margin-left:50px;
+}
+#style
+{
+  border-style: none;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

@@ -13,7 +13,7 @@ export const routes: Route[] = [
     },
 
     {
-        path: 'islot-common',
+        path: 'common',
         loadChildren: 'app/islot-common/islot-common.module#IslotCommonModule'
     },
     

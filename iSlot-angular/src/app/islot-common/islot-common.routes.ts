@@ -1,15 +1,15 @@
-import { Route } from "@angular/router/router";
+import { Route } from "@angular/router";
 import { LocationComponent } from "./location/location.component";
 import { SkillComponent } from "./skill/skill.component";
 
 export const routes: Route[] = [
     {
-        path: '',
+        path: 'location',
         component: LocationComponent 
             
     },
     {
-        path: '',
+        path: 'skill',
         component:  SkillComponent
             
     }

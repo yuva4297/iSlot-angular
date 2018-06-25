@@ -2,12 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SkillComponent } from './skill/skill.component';
 import { LocationComponent } from './location/location.component';
-import { routes } from "./islot.routes";
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+
+
 import { RouterModule } from "@angular/router";
+import { routes } from "./islot-common.routes";
 
 @NgModule({
   imports: [
-    CommonModule,   
+    CommonModule, 
+    FormsModule,
+    ReactiveFormsModule,  
      RouterModule.forChild(routes)
     
   ],
