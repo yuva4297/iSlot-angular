@@ -18,7 +18,7 @@
             <span class="input-group-addon">
                 <i class="glyphicon glyphicon-envelope"></i>
             </span>
-            <input id="email" type="text" class="form-control" name="email" formControlName="email" placeholder="Email">
+            <input id="email" type="text" class="form-control" name="email" (ngModel)="email" formControlName="email" placeholder="Email">
         </div>
         <div class="alert alert-danger" *ngIf="registerAdminForm.get('email').touched && registerAdminForm.get('email').errors">Please Enter the Valid Virtusa Email Id</div>
 
@@ -36,7 +36,7 @@
             <span class="input-group-addon">
                 <i class="glyphicon glyphicon-lock"></i>
             </span>
-            <input id="password" type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
+            <input id="password" type="password" class="form-control" name="password" (ngModel)="password" formControlName="password" placeholder="Password">
         </div>
 
         <div class="alert alert-danger" *ngIf="registerAdminForm.get('password').touched && registerAdminForm.get('password').errors">Please Enter the Password with minimum length of 6</div>
