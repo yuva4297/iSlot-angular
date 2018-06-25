@@ -10,7 +10,7 @@
       <span class="input-group-addon">
         <i class="glyphicon glyphicon-user"></i>
       </span>
-      <input id="username" type="text" class="form-control" name="username" formControlName="username" placeholder="User Name">
+      <input id="username" type="text" class="form-control" (ngModel)="username" name="username" formControlName="username" placeholder="User Name">
     </div>
     <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('username').touched && registerInterviewerForm.get('username').errors">Please Enter the valid User name</div>
 
@@ -28,7 +28,7 @@
       <span class="input-group-addon">
         <i class="glyphicon glyphicon-phone"></i>
       </span>
-      <input id="mobile" type="text" class="form-control" name="mobile" formControlName="mobile" placeholder="Mobile Number">
+      <input id="mobile" type="text" class="form-control" (ngModel)="mobile" name="mobile" formControlName="mobile" placeholder="Mobile Number">
     </div>
     <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('mobile').touched && registerInterviewerForm.get('mobile').errors">Please Enter the Valid Mobile Number</div>
 
@@ -47,7 +47,7 @@
             </span>
             <span class="input-group-addon">Select Your Skills</span>
             <span class="input-group-addon special">
-            <ss-multiselect-dropdown [options]="skills" formControlName="skills" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
+            <ss-multiselect-dropdown [options]="skills" formControlName="skills" (ngModel)="skills" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
                  
           </span>
         </div>
@@ -64,9 +64,9 @@
 
 
         <span class="input-group-addon special">
-          <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
+          <select class="form-control" formControlName="location" (ngModel)="location" id="exampleFormControlSelect1">
             <option></option>
-            <option *ngFor="let location of locations" value="location.id">{{location.locationName}}</option>
+            <option *ngFor="let location of locations" value="{{location.id}}">{{location.name}}</option>
            
           </select>
         </span>
