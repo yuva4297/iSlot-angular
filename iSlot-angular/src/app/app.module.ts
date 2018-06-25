@@ -8,6 +8,8 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { CommonService } from "./islot-common/common.service";
+import { Http, HttpModule } from "@angular/http";
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDMqATKNGPRrZ0K-dgfKYg74ziXIv_Xs7I',
@@ -28,13 +30,14 @@ export const firebaseConfig = {
     // 
     
     AngularFireDatabaseModule,
+    HttpModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig),
     BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
