@@ -2,6 +2,7 @@
 import { Route } from "@angular/router";
 
 export const routes: Route[] = [ 
+    
     {
         path: 'interviewer',
         loadChildren: 'app/interviewer/interviewer.module#InterviewerModule'
@@ -12,10 +13,16 @@ export const routes: Route[] = [
         
     },
 
+  
+    {
+        path: 'common',
+        loadChildren: 'app/islot-common/islot-common.module#IslotCommonModule'
+    },
+    
     {
         path: '',
         loadChildren: 'app/registration/registration.module#RegistrationModule'
-    },
+    }
     
 ]
     
