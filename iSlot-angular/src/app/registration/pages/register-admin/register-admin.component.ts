@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-admin',
@@ -9,7 +11,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class RegisterAdminComponent implements OnInit {
   registerAdminForm: FormGroup;
   locations: Array<any>;
-  constructor() { 
+  state: string = '';
+    error: any;
+  constructor(public af: AngularFireAuth,private router: Router) { 
     this.registerAdminForm =new FormGroup(
       {
         username: new FormControl('',Validators.required),
@@ -33,5 +37,23 @@ export class RegisterAdminComponent implements OnInit {
       }
     ]
   }
+  onSubmit(formData) {
+    if(formData.valid) {
+      console.log(formData.value);
+      
+      this.af.auth.createUserWithEmailAndPassword(
+        formData.value.email,
+        formData.value.password
+        ).then(
+        (success) => {
+        console.log(success);
+        this.router.navigate(['/login'])
+      }).catch(
+        (err) => {
+        console.log(err);
+        this.error = err;
+      })
+    }
 
+}
 }
