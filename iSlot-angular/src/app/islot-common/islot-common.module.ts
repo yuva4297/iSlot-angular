@@ -8,17 +8,18 @@ import { ReactiveFormsModule } from "@angular/forms";
 
 import { RouterModule } from "@angular/router";
 import { routes } from "./islot-common.routes";
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from "@angular/http";
 
 @NgModule({
   imports: [
     CommonModule, 
     FormsModule,
-    ReactiveFormsModule,
     HttpModule,
+    ReactiveFormsModule,  
      RouterModule.forChild(routes)
     
   ],
+  providers: [Http],
   declarations: [SkillComponent, LocationComponent]
 })
 export class IslotCommonModule { }

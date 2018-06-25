@@ -3,6 +3,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
+import { CommonService } from "../../../islot-common/common.service";
 
 @Component({
   selector: 'app-register-interviewer',
@@ -16,7 +17,7 @@ export class RegisterInterviewerComponent implements OnInit {
     registerInterviewerForm : FormGroup;
     state: string = '';
     error: any;
-  constructor(public af: AngularFireAuth,private router: Router) {
+  constructor(public af: AngularFireAuth,private router: Router, private commonService: CommonService) {
     this.registerInterviewerForm =new FormGroup(
       {
         username: new FormControl('',Validators.required),
@@ -27,6 +28,8 @@ export class RegisterInterviewerComponent implements OnInit {
         location: new FormControl('',[Validators.required])
       }
     )
+    this.locations = [];
+    this.skills = [];
    }
    onSubmit(formData) {
     if(formData.valid) {
@@ -48,20 +51,33 @@ export class RegisterInterviewerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.skills = [
-      { id: 1, name: 'Java' },
-      { id: 2, name: 'CSS' },
-  ];
-  this.locations = [
+  //   this.skills = [
+  //     { id: 1, name: 'Java' },
+  //     { id: 2, name: 'CSS' },
+  // ];
+  console.log("skills",this.commonService.skills);
+  console.log("Locations",this.commonService.locations);
+  for(let location in this.commonService.locations)
     {
-      id: 1,
-      name: "Chennai"
-    },
-    {
-      id: 2,
-      name: "Hyderabad"
+      console.log(location);
+      this.locations.push(this.commonService.locations[location]);
     }
-  ]
+  //this.locations = this.commonService.locations;
+    for(let skill in this.commonService.skills)
+      {
+        
+        this.skills.push(this.commonService.skills[skill]);
+        }
+  // this.locations = [
+  //   {
+  //     id: 1,
+  //     name: "Chennai"
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Hyderabad"
+  //   }
+  // ]
   }
   onChange() {
     console.log(this.optionsModel);

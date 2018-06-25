@@ -11,10 +11,12 @@ import {MatTabsModule} from '@angular/material/tabs';
 // import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { EventviewComponent } from './eventview/eventview.component';
 import { EventupdateComponent } from './eventupdate/eventupdate.component';
+import { HttpModule } from "@angular/http";
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    HttpModule,
     MultiselectDropdownModule,
     ReactiveFormsModule,
     MatButtonModule, MatCheckboxModule,MatTabsModule, 

@@ -7,9 +7,9 @@
         <span class="input-group-addon">
           <i class="glyphicon glyphicon-user"></i>
         </span>
-        <input id="username" type="text" class="form-control" name="username" formControlName="username" placeholder="User Name">
+        <input id="eventname" type="text" class="form-control" name="eventname" formControlName="eventname" placeholder="Event Name">
       </div>
-      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('username').touched && driveregistrationForm.get('username').errors">Please Enter the valid User name</div>
+      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('eventname').touched && driveregistrationForm.get('eventname').errors">Please Enter the Event name</div>
       <div class="input-group center">
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>
@@ -38,18 +38,18 @@
               </span>
               <span class="input-group-addon">Select Your Skills</span>
               <span class="input-group-addon special">
-                  <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
+                  <select class="form-control" formControlName="skills" id="exampleFormControlSelect1">
                       <option></option>
-                      <option>chennai</option>
-                      <option>Hyde</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
+                      <option>angular</option>
+                      <option>react</option>
+                      <option>.net</option>
+                      <option>java</option>
+                      <option>testing</option>
                     </select>
                   </span>        
           </div>
       </div>
-      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('skills').errors">Please Select the skills</div>
+      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('skills').touched && driveregistrationForm.get('skills').errors">Please Select the skills</div>
       <div class="input-group center">
   
         <div class="input-group-prepend">
@@ -61,10 +61,10 @@
             <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
               <option></option>
               <option>chennai</option>
-              <option>Hyde</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>Hyderabad</option>
+              <option>pune</option>
+              <option>bangalore</option>
+              <option>gurgaon</option>
             </select>
           </span>
         </div>
