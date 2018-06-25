@@ -1,0 +1,78 @@
+<div class="container">
+    <h2>
+      <p class="header">Drive Registration</p>
+    </h2>
+    <form [formGroup]="driveregistrationForm">
+      <div class="input-group center">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-user"></i>
+        </span>
+        <input id="username" type="text" class="form-control" name="username" formControlName="username" placeholder="User Name">
+      </div>
+      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('username').touched && driveregistrationForm.get('username').errors">Please Enter the valid User name</div>
+      <div class="input-group center">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </span>        
+          <input id="joindate"  type="date" class="form-control" name="joindate" formControlName="joindate" placeholder="date">
+        </div>
+        <div class="alert alert-danger" *ngIf="driveregistrationForm.get('joindate').touched && driveregistrationForm.get('joindate').errors">Please Enter the date</div>
+        <div class="input-group center">
+            <span class="input-group-addon">
+              <i class="glyphicon glyphicon-time"></i>Start Time
+            </span>        
+            <input id="starttime"  type="time" class="form-control" name="starttime" formControlName="starttime" placeholder="Start Time">
+          </div>
+          <div class="alert alert-danger" *ngIf="driveregistrationForm.get('starttime').touched && driveregistrationForm.get('starttime').errors">Please Enter the start time</div>          
+          <div class="input-group center">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-time"></i>End Time
+              </span>        
+              <input id="endtime"  type="time" class="form-control" name="endtime" formControlName="endtime" placeholder="End Time">
+            </div>  
+            <div class="alert alert-danger" *ngIf="driveregistrationForm.get('endtime').touched && driveregistrationForm.get('endtime').errors">Please Enter the end time</div>
+      <div class="input-group center">
+          <div class="input-group-prepend">
+              <span class="input-group-addon">
+                <i class="glyphicon glyphicon-certificate"></i>
+              </span>
+              <span class="input-group-addon">Select Your Skills</span>
+              <span class="input-group-addon special">
+                  <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
+                      <option></option>
+                      <option>chennai</option>
+                      <option>Hyde</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </span>        
+          </div>
+      </div>
+      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('skills').errors">Please Select the skills</div>
+      <div class="input-group center">
+  
+        <div class="input-group-prepend">
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-globe"></i>
+          </span>
+          <span class="input-group-addon">Select Your Location</span>
+          <span class="input-group-addon special">
+            <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
+              <option></option>
+              <option>chennai</option>
+              <option>Hyde</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </span>
+        </div>
+      </div>
+  
+      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('location').touched && driveregistrationForm.get('location').errors">Please Select the Location</div>
+  
+      <button type="reset" class="btn btn-success center">Reset</button>
+      <button type="button" class="btn btn-success center">create event</button>
+    </form>
+  </div>

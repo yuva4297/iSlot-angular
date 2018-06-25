@@ -48,15 +48,17 @@
             <span class="input-group-addon">Select Your Skills</span>
             <span class="input-group-addon special">
             <ss-multiselect-dropdown [options]="skills" formControlName="skills" (ngModelChange)="onChange($event)"></ss-multiselect-dropdown>
-            </span>
+                 
+          </span>
         </div>
     </div>
     <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('skills').errors">Please Select the skills</div>
     <div class="input-group center">
-
+              
       <div class="input-group-prepend">
         <span class="input-group-addon">
           <i class="glyphicon glyphicon-globe"></i>
+
         </span>
         <span class="input-group-addon">Select Your Location</span>
 
