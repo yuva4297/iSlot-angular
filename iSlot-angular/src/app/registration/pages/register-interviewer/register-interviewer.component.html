@@ -5,7 +5,7 @@
   <h2>
     <p class="header">Register As An Interviewer</p>
   </h2>
-  <form [formGroup]="registerInterviewerForm">
+  <form [formGroup]="registerInterviewerForm" #formData='ngForm' (ngSubmit)="onSubmit(formData)">
     <div class="input-group center">
       <span class="input-group-addon">
         <i class="glyphicon glyphicon-user"></i>
@@ -18,11 +18,11 @@
       <span class="input-group-addon">
         <i class="glyphicon glyphicon-envelope"></i>
       </span>
-      <input id="email" type="text" class="form-control" name="email" formControlName="email" placeholder="Email">
+      <input id="email" type="text" class="form-control" (ngModel)="email" name="email" formControlName="email" placeholder="Email">
     </div>
     <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('email').touched && registerInterviewerForm.get('email').errors">Please Enter the Valid Virtusa Email Id</div>
 
-    <!-- <div  class="alert alert-danger" *ngIf="registerInterviewerForm.get('email').errors.pattern">Please Enter the valid VirtusaEmail Id</div> -->
+   
 
     <div class="input-group center">
       <span class="input-group-addon">
@@ -36,7 +36,7 @@
       <span class="input-group-addon">
         <i class="glyphicon glyphicon-lock"></i>
       </span>
-      <input id="password" type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
+      <input id="password" type="password" class="form-control"  (ngModel)="password" name="password" formControlName="password" placeholder="Password">
     </div>
 
     <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('password').touched && registerInterviewerForm.get('password').errors">Please Enter the Password with minimum length of 6</div>
@@ -66,11 +66,8 @@
         <span class="input-group-addon special">
           <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
             <option></option>
-            <option>chennai</option>
-            <option>Hyde</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option *ngFor="let location of locations" value="location.id">{{location.name}}</option>
+           
           </select>
         </span>
       </div>
@@ -78,6 +75,6 @@
 
     <div class="alert alert-danger" *ngIf="registerInterviewerForm.get('location').touched && registerInterviewerForm.get('location').errors">Please Select the Location</div>
 
-    <button type="button" class="btn btn-success center">Register</button>
+    <button type="submit" class="btn btn-success center">Register</button>
   </form>
 </div>
