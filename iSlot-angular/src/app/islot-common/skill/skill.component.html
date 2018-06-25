@@ -1,0 +1,53 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid" id="tile">
+      <div class="navbar-header">
+            <a class="navbar-brand" href="#">iSlot</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-option-vertical"></span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="style">
+  <div class="text-center">
+    <form [formGroup]="skills">
+  <div class="form-group">
+      <input type="text" class="form-control" id="mySkill" name="mySkill" formControlName="mySkill" placeholder="Add a new skill" ngModel>
+      <div class="alert alert-danger" *ngIf="skills.get('mySkill').touched && skills.get('mySkill').errors">Please enter the skill</div>
+  </div>
+</form>
+     <div  class="row">
+        <div class="item col-lg-3" id="tile" >
+                <!-- <button type="button" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-trash"></span>Delete
+                    </button> -->
+                    <a routerLink="/"><span class="glyphicon glyphicon-trash"></span></a>
+                    <input type="text" name="" value="Java"id="textfield">
+        </div>
+        <div class="item col-lg-3" id="tile">
+                <a routerLink="/"><span class="glyphicon glyphicon-trash"></span></a>
+                    <input type="text" name="" value=".Net"id="textfield">
+        </div>
+        <div class="item col-lg-3" id="tile">
+                <a routerLink="/"><span class="glyphicon glyphicon-trash"></span></a>
+                <input type="text" name="" value="Angular"id="textfield">
+        </div>
+     </div>
+    
+     <div class="row">
+       <div class="item col-lg-3" id="tile">
+            <a routerLink="/"><span class="glyphicon glyphicon-trash"></span></a>
+                <input type="text" name="" value="Java Script"id="textfield">
+       </div>    
+       <div class="item col-lg-3" id="tile">
+            <a routerLink="/"><span class="glyphicon glyphicon-trash"></span></a>
+                <input type="text" name="" value="Testing"id="textfield">
+       </div> 
+       <div class="item col-lg-3" id="tile">
+            <a routerLink="/"><span class="glyphicon glyphicon-trash"></span></a>
+                <input type="text" name="" value="Informatica"id="textfield">
+      </div>  
+   </div>
+  </div>
+  </div>     
+  

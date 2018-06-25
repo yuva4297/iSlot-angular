@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { routes } from "./app.routes";
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
@@ -30,6 +30,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   
