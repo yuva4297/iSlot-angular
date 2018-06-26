@@ -1,106 +1,64 @@
+<mat-tab-group>
+  <mat-tab label="VIEW">
+    <div class="groove">
+      <br>
+      <div class="groove1" *ngFor="let slot of events.slots">
+        <span id="time">{{slot.startTime}} - {{slot.endTime}} </span>
 
 
- 
-                <mat-tab-group>
-            <mat-tab label="VIEW"> 
-               <div class="groove">
-               <br>
-              <div class="groove1" *ngFor= "let slot of events.slots" >
-                   <span id="time">{{slot.startTime}} - {{slot.endTime}}  </span> 
-                 
-                  
-                    <div class="groove2" >
-                     <span *ngFor= "let person of slot.numberOfInterviewersEnrolled"> 
-                       <a href="" class="btn btn-info btn-lg" id="person"></a>        
-                       <span class="glyphicon glyphicon-user"></span>{{person.userName}}
-                       </span>
-                       <!-- </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                       
-                      <span class="glyphicon glyphicon-user"></span> krishna
-                    </a> -->
-                    <!-- <a href="" class="btn btn-info btn-lg" id="person">
-                          <span class="glyphicon glyphicon-user"></span>Sundar
-                        </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                          <span class="glyphicon glyphicon-user"></span>Aravind
-                          </a>
-                        </span> -->
-                      </div>
-                      <div>
+        <div class="groove2">
+          <span *ngFor="let person of slot.numberOfInterviewersEnrolled">
+            <a href="" class="btn btn-info btn-lg" id="person"></a>
+            <span class="glyphicon glyphicon-user"></span>{{person.userName}}
+          </span>
+        </div>
+        <div>
 
-                        <span id="number">
-  
-                            {{slot.numberOfInterviewersEnrolled[0].numberOfInterviewsTaken}}  
-                           </span> </div>  
-                      </div>
-                
-                
-              
-              <br>
-              <!-- <div class="groove1">
-                  <span id="time">11AM - 2PM</span>
-                  <input type="text" id="count" value="" readonly>   <div class="groove2"><span> <a href="" class="btn btn-info btn-lg" id="person">
-                      <span class="glyphicon glyphicon-user"></span> Sunil
-                    </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                        <span class="glyphicon glyphicon-user"></span>Ram
-                    </a>
-                    <a href="" class="btn btn-info btn-lg" id="person"> 
-                          <span class="glyphicon glyphicon-user"></span> Gopal
-                        </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                            <span class="glyphicon glyphicon-user"></span> shiva
-                          </a>
-                        </span> </div>  </div>
-             
-              <br>
-              <div class="groove1">
-                  <span id="time">2PM - 4PM</span>
-                  <input type="text" id="count" value="" readonly>   <div class="groove2"><span> <a href="" class="btn btn-info btn-lg" id="person">
-                      <span class="glyphicon glyphicon-user"></span> Abdul
-                    </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                        <span class="glyphicon glyphicon-user"></span>Sudheer
-                    </a>
-                    <a href="" class="btn btn-info btn-lg" id="person">
-                          <span class="glyphicon glyphicon-user"></span> Joseph
-                        </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                            <span class="glyphicon glyphicon-user"></span>Krishna
-                          </a>
-                        </span> </div>  </div>
-              <br>
-              <div class="groove1">
-                  <span id="time">4PM - 6PM</span>
-                  <input type="text" id="count" value="" readonly>   <div class="groove2"><span> <a href="" class="btn btn-info btn-lg" id="person">
-                      <span class="glyphicon glyphicon-user"></span>Sundar
-                    </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                        <span class="glyphicon glyphicon-user"></span> Aravind
-                    </a>
-                    <a href="" class="btn btn-info btn-lg" id="person">
-                          <span class="glyphicon glyphicon-user"></span> Joseph
-                        </a>  <a href="" class="btn btn-info btn-lg" id="person">
-                            <span class="glyphicon glyphicon-user"></span>Krishna
-                          </a>
-                        </span> </div>  </div> -->
-          
-          </div></mat-tab>
-            <mat-tab label="UPDATE"><div> <div class="grooveupdate"><br>
-                <div>  <input type="text" id="count1" value="Sudheer" readonly><input type="text" id="count2" value="" readonly> 
-                  <button type="button" class="btn btn-success" id="button">Approve</button></div><br>
-                <div>  <input type="text" id="count1" value="kumar" readonly><input type="text" id="count2" value="" readonly>
-                  <button type="button" class="btn btn-success" id="button">Approve</button></div><br>
-                <div>  <input type="text" id="count1" value="Sundar" readonly><input type="text" id="count2" value="" readonly>
-                  <button type="button" class="btn btn-success" id="button">Approve</button> </div><br>
-                <div>  <input type="text" id="count1" value="Krishna" readonly><input type="text" id="count2" value="" readonly>
-                  <button type="button" class="btn btn-success" id="button">Approve</button> </div><br>
-                  <button type="button" class="btn btn-success" id="closebutton">Close Event</button> 
-            </div>
-          </div></mat-tab>
-            
-          </mat-tab-group>
-  <!-- <div class="groove">
-    <br>
-    <div class="groove1"> </div>
-    <br>
-    <div class="groove1"> </div>
-    <br>
-    <div class="groove1"> </div>
-  </div>
-   -->
-  
+          <span id="number">
+
+            {{slot.numberOfInterviewersEnrolled[0].numberOfInterviewsTaken}}
+          </span>
+        </div>
+      </div>
+
+
+
+      <br>
+
+
+    </div>
+  </mat-tab>
+  <mat-tab label="UPDATE">
+    <div>
+      <div class="grooveupdate">
+        <br>
+        <div>
+          <input type="text" id="count1" value="Sudheer" readonly>
+          <input type="text" id="count2" value="" readonly>
+          <button type="button" class="btn btn-success" id="button">Approve</button>
+        </div>
+        <br>
+        <div>
+          <input type="text" id="count1" value="kumar" readonly>
+          <input type="text" id="count2" value="" readonly>
+          <button type="button" class="btn btn-success" id="button">Approve</button>
+        </div>
+        <br>
+        <div>
+          <input type="text" id="count1" value="Sundar" readonly>
+          <input type="text" id="count2" value="" readonly>
+          <button type="button" class="btn btn-success" id="button">Approve</button>
+        </div>
+        <br>
+        <div>
+          <input type="text" id="count1" value="Krishna" readonly>
+          <input type="text" id="count2" value="" readonly>
+          <button type="button" class="btn btn-success" id="button">Approve</button>
+        </div>
+        <br>
+        <button type="button" class="btn btn-success" id="closebutton">Close Event</button>
+      </div>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
