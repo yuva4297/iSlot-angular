@@ -10,6 +10,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CommonService } from "./islot-common/common.service";
 import { Http, HttpModule } from "@angular/http";
+import { AdminService } from "./admin/admin.service";
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDMqATKNGPRrZ0K-dgfKYg74ziXIv_Xs7I',
@@ -37,7 +38,7 @@ export const firebaseConfig = {
     RouterModule.forRoot(routes)
   ],
   
-  providers: [CommonService],
+  providers: [CommonService,AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
