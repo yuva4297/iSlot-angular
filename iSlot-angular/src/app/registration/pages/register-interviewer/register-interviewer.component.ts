@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { CommonService } from "../../../islot-common/common.service";
+import { RegistrationService } from '../../registration.service';
 
 @Component({
   selector: 'app-register-interviewer',
@@ -17,7 +18,8 @@ export class RegisterInterviewerComponent implements OnInit {
     registerInterviewerForm : FormGroup;
     state: string = '';
     error: any;
-  constructor(public af: AngularFireAuth,private router: Router, private commonService: CommonService) {
+    data: any;
+  constructor(public af: AngularFireAuth,private router: Router, private commonService: CommonService, private registrationService: RegistrationService) {
     this.registerInterviewerForm =new FormGroup(
       {
         username: new FormControl('',Validators.required),
@@ -40,7 +42,17 @@ export class RegisterInterviewerComponent implements OnInit {
         formData.value.password
         ).then(
         (success) => {
-        console.log(success.user.uid);
+        console.log(success);
+        this.data = {
+          "email": formData.value.email,
+          "eventPoints": [],
+          "location": formData.value.location,
+          "role": "interviewer",
+          "skills": formData.value.skills.slice(1),
+          "userId": success.user.uid,
+          "userName": formData.value.username
+        };
+        this.registrationService.sendUserDetails(this.data);
         this.router.navigate(['/login'])
       }).catch(
         (err) => {

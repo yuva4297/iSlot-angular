@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { NgModel, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
+import { HttpModule } from '@angular/http';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDMqATKNGPRrZ0K-dgfKYg74ziXIv_Xs7I',
@@ -24,7 +25,7 @@ export const firebaseConfig = {
     FormsModule,
     ReactiveFormsModule,
     MultiselectDropdownModule,
-    
+    HttpModule,
 
     AngularFireModule.initializeApp(firebaseConfig),
 
