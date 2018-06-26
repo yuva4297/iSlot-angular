@@ -2,33 +2,33 @@
     <h2>
       <p class="header">Drive Registration</p>
     </h2>
-    <form [formGroup]="driveregistrationForm">
+    <form [formGroup]="driveregistrationForm" #formData='ngForm' (ngSubmit)="onSubmit(formData)">
       <div class="input-group center">
         <span class="input-group-addon">
           <i class="glyphicon glyphicon-user"></i>
         </span>
-        <input id="eventname" type="text" class="form-control" name="eventname" formControlName="eventname" placeholder="Event Name">
+        <input id="eventname" type="text" class="form-control" (ngModel)="eventname" name="eventname" formControlName="eventname" placeholder="Event Name">
       </div>
       <div class="alert alert-danger" *ngIf="driveregistrationForm.get('eventname').touched && driveregistrationForm.get('eventname').errors">Please Enter the Event name</div>
       <div class="input-group center">
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>
           </span>        
-          <input id="joindate"  type="date" class="form-control" name="joindate" formControlName="joindate" placeholder="date">
+          <input id="joindate"  type="date" class="form-control" (ngModel)="joindate" name="joindate" formControlName="joindate" placeholder="date">
         </div>
         <div class="alert alert-danger" *ngIf="driveregistrationForm.get('joindate').touched && driveregistrationForm.get('joindate').errors">Please Enter the date</div>
         <div class="input-group center">
             <span class="input-group-addon">
               <i class="glyphicon glyphicon-time"></i>Start Time
             </span>        
-            <input id="starttime"  type="time" class="form-control" name="starttime" formControlName="starttime" placeholder="Start Time">
+            <input id="starttime"  type="time" class="form-control" (ngModel)="starttime" name="starttime" formControlName="starttime" placeholder="Start Time">
           </div>
           <div class="alert alert-danger" *ngIf="driveregistrationForm.get('starttime').touched && driveregistrationForm.get('starttime').errors">Please Enter the start time</div>          
           <div class="input-group center">
               <span class="input-group-addon">
                 <i class="glyphicon glyphicon-time"></i>End Time
               </span>        
-              <input id="endtime"  type="time" class="form-control" name="endtime" formControlName="endtime" placeholder="End Time">
+              <input id="endtime"  type="time" class="form-control" (ngModel)="endtime" name="endtime" formControlName="endtime" placeholder="End Time">
             </div>  
             <div class="alert alert-danger" *ngIf="driveregistrationForm.get('endtime').touched && driveregistrationForm.get('endtime').errors">Please Enter the end time</div>
       <div class="input-group center">
@@ -38,7 +38,7 @@
               </span>
               <span class="input-group-addon">Select Your Skills</span>
               <span class="input-group-addon special">
-                  <select class="form-control" formControlName="skills" id="exampleFormControlSelect1">
+                  <select class="form-control" formControlName="skills" (ngModel)="skills" id="exampleFormControlSelect1">
                       <option></option>
                       <option>angular</option>
                       <option>react</option>
@@ -58,7 +58,7 @@
           </span>
           <span class="input-group-addon">Select Your Location</span>
           <span class="input-group-addon special">
-            <select class="form-control" formControlName="location" id="exampleFormControlSelect1">
+            <select class="form-control" formControlName="location" (ngModel)="location" id="exampleFormControlSelect1">
               <option></option>
               <option>chennai</option>
               <option>Hyderabad</option>
@@ -73,6 +73,6 @@
       <div class="alert alert-danger" *ngIf="driveregistrationForm.get('location').touched && driveregistrationForm.get('location').errors">Please Select the Location</div>
   
       <button type="reset" class="btn btn-success center">Reset</button>
-      <button type="button" class="btn btn-success center">create event</button>
+      <button type="submit" class="btn btn-success center">create event</button>
     </form>
   </div>

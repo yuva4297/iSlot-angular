@@ -12,21 +12,20 @@
         </ul>
      </div>
 </nav>
-<a href="admin/driveregistration">
+<a [routerLink]="['driveregistration']" >
     <span class="glyphicon glyphicon-plus-sign"></span>
   </a>
 
 <p>
   Recent Events
-</p><br><br>
-  <div>
-    <button type="button" class="btn btn-default"></button>
-    <button type="button" class="btn btn-default"></button>    
-</div> <br><br>   
+</p><br>
+  <div *ngFor="let event of recentevents"><br>
+    <div class ="eventBox"  [style.bService.evorder-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</div>
+    <!-- <button type="button" class="btn btn-default"></button>     -->
+</div> <br>
 <p>
-  Upcoming Events</p><br><br>
-  <div>
-      <button type="button" class="btn btn-default"></button>
-      <button type="button" class="btn btn-default"></button>    
-  </div>    
+  Upcoming Events</p><br>
+  <div *ngFor="let event of upcomingevents"><br>
+    <div  class ="eventBox"  [style.bService.evorder-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</div>
+  </div>  <br>  
 </div>

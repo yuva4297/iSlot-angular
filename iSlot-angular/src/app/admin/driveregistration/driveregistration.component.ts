@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IMultiSelectOption } from "angular-2-dropdown-multiselect/angular-2-dropdown-multiselect";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AdminService } from "../admin.service";
+import { Http } from "@angular/http";
 
 @Component({
   selector: 'app-driveregistration',
@@ -12,10 +14,11 @@ export class DriveregistrationComponent implements OnInit {
   optionsModel: number[];
   skills: IMultiSelectOption[];
   locations: Array<any>;
+  events:any[];
+  event;
   error:any={isError:false,errorMessage:''};
 
-  
-  constructor() {
+  constructor(private adminservice: AdminService, private htpservice:Http) {
   this.driveregistrationForm =new FormGroup(
     {
       eventname: new FormControl('',Validators.required),
@@ -27,28 +30,23 @@ export class DriveregistrationComponent implements OnInit {
     }
   )
 }
-  ngOnInit() {
+  ngOnInit() {}
 
-    this.skills = [
-      { id: 1, name: 'Java' },
-      { id: 2, name: 'CSS' },
-  ];
-  this.locations = [
-    {
-      id: 1,
-      name: "Chennai"
-    },
-    {
-      id: 2,
-      name: "Hyderabad"
-    }
-  ]
+    onSubmit(formData){
+        console.log("hhghghy");
+        console.log(formData);
+     this.event ={
+       "eventname":formData.value.eventname,
+       "joindate":formData.value.joindate,
+       "starttime":formData.value.starttime,
+       "endtime":formData.value.endtime,
+       "skills":formData.value.skills,
+       "location":formData.value.location,
+     }
+console.log(this.event);
+ this.adminservice.Addevent(this.event);
+   }
   }
-  onChange() {
-    console.log(this.optionsModel);
-}
   // Material Select Initialization
  
-
-}
 
