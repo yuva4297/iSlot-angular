@@ -12,6 +12,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { EventviewComponent } from './eventview/eventview.component';
 import { EventupdateComponent } from './eventupdate/eventupdate.component';
 import { HttpModule } from "@angular/http";
+import { AdminService } from './admin.service';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +23,8 @@ import { HttpModule } from "@angular/http";
     MatButtonModule, MatCheckboxModule,MatTabsModule, 
     RouterModule.forChild(routes)
   ],
-  declarations: [DashboardComponent, DriveregistrationComponent,  EventviewComponent, EventupdateComponent]
+  declarations: [DashboardComponent, DriveregistrationComponent,  EventviewComponent, EventupdateComponent],
+  providers: [AdminService]
 
 
 })

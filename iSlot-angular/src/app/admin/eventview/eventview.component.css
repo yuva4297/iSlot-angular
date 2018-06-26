@@ -5,16 +5,16 @@
     width:110vh;
     }
     .groove1 {border-style: groove;
-        height: 16vh;
-        width:100vh;
+        height: 18vh;
+        width: 102vh;
         margin-left: 5vh;
         
         }
         .groove2 {border-style: inset;
             height: 12vh;
             width: 40vh;
-            margin-left: 34vh;
-            margin-top: -5%;
+            margin-left: 37vh;
+            margin-top: -1%;
             position: relative;
             display: flex;
             }
@@ -25,10 +25,10 @@
                 font-weight: bold;
          }
  #count{
-    margin-left: 70vh;
+    margin-left: 40vh;
     margin-top: 3%;
-    height: 25%;
-    padding: 2%;
+    height: 38%;
+    padding: 9%;
     width: 0%;
     border-style: solid;
 }
@@ -65,5 +65,13 @@
          color:black;
          background-color: white;
          border:white;
-        height: 5vh;
+        /* height: 7vh;
+        width:2vh; */padding: 4%;
+     }
+     #number{
+         font-family: cursive;
+         float: right;
+    padding: 4%;
+    margin-top: -11%;
+    font-size: 25px;
      }

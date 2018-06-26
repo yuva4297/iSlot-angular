@@ -3,7 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AngularFireAuth} from 'angularfire2/auth';
 import { Router } from '@angular/router';
-
+import { RegistrationService } from '../../registration.service';
+import { map } from "rxjs/operators";
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup
   error: any;
-    constructor(public af: AngularFireAuth,private router: Router) {
+  user:any;
+    constructor(public af: AngularFireAuth,private router: Router, private registrationService: RegistrationService) {
 
     //   this.af.auth.(auth => { 
     //   if(auth) {
@@ -37,9 +39,29 @@ export class LoginComponent implements OnInit {
         formData.value.email,
         formData.value.password
         ).then(
-        (success) => {
-        console.log(success);
-        this.router.navigate(['/admin'])
+        (data) => {
+        console.log(data.user.uid);
+        this.registrationService.getUserDetails(data.user.uid)
+        .pipe(map(rsp => rsp.json()))
+        .subscribe(data => {
+          console.log(data);
+          for(let user in data)
+          {
+            console.log(data[user]);
+            this.user = data[user];
+          }
+          console.log(this.user);
+          console.log(this.user.userId);
+          if(this.user.role=="interviewer")
+          {
+            this.router.navigate(['/interviewer'])
+          }
+          if(this.user.role == "admin")
+          {
+
+            this.router.navigate(['/admin'])
+          }
+        });
       }).catch(
         (err) => {
         console.log(err);

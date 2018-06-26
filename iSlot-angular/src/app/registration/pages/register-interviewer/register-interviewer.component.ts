@@ -48,6 +48,7 @@ export class RegisterInterviewerComponent implements OnInit {
           "eventPoints": [],
           "location": formData.value.location,
           "role": "interviewer",
+          "mobile": formData.value.mobile,
           "skills": formData.value.skills.slice(1),
           "userId": success.user.uid,
           "userName": formData.value.username

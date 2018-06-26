@@ -1,53 +1,42 @@
 
-<!-- <div class="container">
-    <h2>Dynamic Tabs</h2>
-    <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#view">VIEW</a></li>
-      <li><a data-toggle="tab" routerLink="#update">UPDATE</a></li>
-     
-    </ul>
-  
-    <div class="tab-content">
-      <div id="view" class="tab-pane fade in active">
-         
-      
-        <h3>VIEW</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </div>
-      <div id="update" class="tab-pane fade">
-        <h3>UPDATE</h3>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
-    
-       
-     
-    </div>
-  </div> -->
+
  
                 <mat-tab-group>
             <mat-tab label="VIEW"> 
                <div class="groove">
                <br>
-              <div class="groove1" >
-                   <span id="time">9AM - 11AM  </span> 
+              <div class="groove1" *ngFor= "let slot of events.slots" >
+                   <span id="time">{{slot.startTime}} - {{slot.endTime}}  </span> 
                  
-                   <input type="text" id="count" value="" readonly>  <div class="groove2"><span> <a href="" class="btn btn-info btn-lg" id="person">
-                      <span class="glyphicon glyphicon-user"></span>sudheer
-                    </a>  <a href="" class="btn btn-info btn-lg" id="person">
+                  
+                    <div class="groove2" >
+                     <span *ngFor= "let person of slot.numberOfInterviewersEnrolled"> 
+                       <a href="" class="btn btn-info btn-lg" id="person"></a>        
+                       <span class="glyphicon glyphicon-user"></span>{{person.userName}}
+                       </span>
+                       <!-- </a>  <a href="" class="btn btn-info btn-lg" id="person">
+                       
                       <span class="glyphicon glyphicon-user"></span> krishna
-                    </a>
-                    <a href="" class="btn btn-info btn-lg" id="person">
+                    </a> -->
+                    <!-- <a href="" class="btn btn-info btn-lg" id="person">
                           <span class="glyphicon glyphicon-user"></span>Sundar
                         </a>  <a href="" class="btn btn-info btn-lg" id="person">
                           <span class="glyphicon glyphicon-user"></span>Aravind
                           </a>
-                        </span>
-                      </div> </div>  
+                        </span> -->
+                      </div>
+                      <div>
+
+                        <span id="number">
+  
+                            {{slot.numberOfInterviewersEnrolled[0].numberOfInterviewsTaken}}  
+                           </span> </div>  
+                      </div>
                 
                 
               
               <br>
-              <div class="groove1">
+              <!-- <div class="groove1">
                   <span id="time">11AM - 2PM</span>
                   <input type="text" id="count" value="" readonly>   <div class="groove2"><span> <a href="" class="btn btn-info btn-lg" id="person">
                       <span class="glyphicon glyphicon-user"></span> Sunil
@@ -88,7 +77,7 @@
                         </a>  <a href="" class="btn btn-info btn-lg" id="person">
                             <span class="glyphicon glyphicon-user"></span>Krishna
                           </a>
-                        </span> </div>  </div>
+                        </span> </div>  </div> -->
           
           </div></mat-tab>
             <mat-tab label="UPDATE"><div> <div class="grooveupdate"><br>

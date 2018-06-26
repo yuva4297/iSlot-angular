@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class RegistrationService {
   user;
-  constructor(private http: Http) { }
+  constructor(private http: Http) {
+    this.user= {};
+   }
 
   sendUserDetails(data)
   {
@@ -12,14 +14,12 @@ export class RegistrationService {
     this.http.post(url, data).subscribe(rsp =>{this.user = rsp.json(),
     console.log(rsp.json());})
   }
-  // getUserDetails(userid)
-  // {
-  //   const url = "https://islot-angular.firebaseio.com/User.json";
-  //   var userLink = new Firebase(url);
-  //   var userData = userLink.orderByChild("userId").equalTo(userid);
-  //   userData.on("value", function(response) {
-  //     console.log(response.val());
-  //   });
-  // }
+  getUserDetails(userid)
+  {
+    const userDetail ="userId"
+    const url = `https://islot-angular.firebaseio.com/User.json?orderBy=\"${userDetail}\"&equalTo=\"${userid}\"`;
+    console.log(url);
+    return this.http.get(url);
+  }
 
 }
