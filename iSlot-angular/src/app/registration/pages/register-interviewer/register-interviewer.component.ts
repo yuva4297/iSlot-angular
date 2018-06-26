@@ -40,7 +40,7 @@ export class RegisterInterviewerComponent implements OnInit {
         formData.value.password
         ).then(
         (success) => {
-        console.log(success);
+        console.log(success.user.uid);
         this.router.navigate(['/login'])
       }).catch(
         (err) => {
