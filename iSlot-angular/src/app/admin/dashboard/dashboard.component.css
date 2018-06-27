@@ -8,10 +8,8 @@ div {
 }
 .eventBox
 {
-    border: 2px solid green;
     width:30vh;
     height: 30px;
-    float: left;
 }
 
 .glyphicon-plus-sign{

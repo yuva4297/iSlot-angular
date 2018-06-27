@@ -3,8 +3,7 @@ import { Http } from "@angular/http";
 
 
 @Injectable()
-export class AdminService {
-  eventValue;
+export class InterviewerService {
   recentevents;
   upcomingevents;
   eventdate;
@@ -26,8 +25,6 @@ export class AdminService {
     this.http.get(url).subscribe(rsp => {
       this.data = rsp.json(),
         console.log(rsp.json());
-      //this.adminService.getEvents();
-      //console.log("events",this.adminService.events);
       for (let event in this.data) {
         this.eventdate = this.data[event]['eventDate'];
         this.day = this.eventdate ? this.eventdate.split('/') : '';
@@ -55,21 +52,10 @@ export class AdminService {
         }
       }
 
-      // console.log(event);
-      // console.log(this.data[event].eventName);
-      //  this.events.push(this.data[event]);
+    
 
     });
 
-    // console.log('gotEvents')
+    
   }
-  Addevent(event) {
-    this.http.post("https://islot-angular.firebaseio.com/Event.json", event)
-      .subscribe(rsp => {
-      this.eventValue = rsp.json(),
-        console.log(rsp.json());
-      })
-  }
-
 }
-

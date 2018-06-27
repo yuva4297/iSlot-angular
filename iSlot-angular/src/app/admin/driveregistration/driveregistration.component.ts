@@ -27,6 +27,7 @@ export class DriveregistrationComponent implements OnInit {
       endtime : new FormControl('',Validators.required),
       skills: new FormControl('', [Validators.required]),
       location: new FormControl('',[Validators.required])
+      
     }
   )
 }
@@ -46,7 +47,10 @@ export class DriveregistrationComponent implements OnInit {
 console.log(this.event);
  this.adminservice.Addevent(this.event);
    }
-  }
+  
   // Material Select Initialization
  
 
+
+   
+}
