@@ -17,7 +17,6 @@ import { HttpModule, Http } from "@angular/http";
     HttpModule,
     ReactiveFormsModule,  
      RouterModule.forChild(routes)
-    
   ],
   providers: [Http],
   declarations: [SkillComponent, LocationComponent]

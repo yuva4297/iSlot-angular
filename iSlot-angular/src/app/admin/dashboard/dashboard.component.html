@@ -6,7 +6,7 @@
       <a class="navbar-brand">ISlot</a>
       <a class="navbar-brand">Dashboard</a>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-line-chart"></i></a></li>
+        <li><a [routerLink]="['stats']"><span class="fa fa-line-chart"></span></a></li>
         <li><a href="#"><span class="glyphicon glyphicon-option-vertical"></span></a></li>
       </ul>
     </div>
@@ -20,7 +20,7 @@
   </p><br>
   <div *ngFor="let event of recentevents"><br>
     <button class="eventBox" [style.border-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</button>
-    <!-- <button type="button" class="btn btn-default"></button>     -->
+    
   </div> <br>
   <p>
     Upcoming Events</p><br>

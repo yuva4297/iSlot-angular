@@ -23,8 +23,14 @@ export class DriveregistrationComponent implements OnInit {
     {
       eventname: new FormControl('',Validators.required),
       joindate: new FormControl('',Validators.required),
-      starttime: new FormControl('',Validators.required),
-      endtime : new FormControl('',Validators.required),
+      slot1starttime: new FormControl('',Validators.required),
+      slot1endtime : new FormControl('',Validators.required),
+      slot2starttime: new FormControl('',Validators.required),
+      slot2endtime : new FormControl('',Validators.required),
+      slot3starttime: new FormControl('',Validators.required),
+      slot3endtime : new FormControl('',Validators.required),
+      slot4starttime: new FormControl('',Validators.required),
+      slot4endtime : new FormControl('',Validators.required),
       skills: new FormControl('', [Validators.required]),
       location: new FormControl('',[Validators.required])
       
@@ -34,23 +40,23 @@ export class DriveregistrationComponent implements OnInit {
   ngOnInit() {}
 
     onSubmit(formData){
-        console.log("hhghghy");
         console.log(formData);
      this.event ={
        "eventname":formData.value.eventname,
        "joindate":formData.value.joindate,
-       "starttime":formData.value.starttime,
-       "endtime":formData.value.endtime,
+       "slot1starttime":formData.value.starttime,
+       "slot1endtime":formData.value.endtime,
+       "slot2starttime":formData.value.starttime,
+       "slot2endtime":formData.value.endtime,
+       "slot3starttime":formData.value.starttime,
+       "slot3endtime":formData.value.endtime,
+       "slot4starttime":formData.value.starttime,
+       "slot4endtime":formData.value.endtime,
        "skills":formData.value.skills,
        "location":formData.value.location,
      }
 console.log(this.event);
  this.adminservice.Addevent(this.event);
    }
-  
   // Material Select Initialization
- 
-
-
-   
 }

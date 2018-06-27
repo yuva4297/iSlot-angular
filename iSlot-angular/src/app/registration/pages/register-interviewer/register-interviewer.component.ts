@@ -67,22 +67,11 @@ export class RegisterInterviewerComponent implements OnInit {
       {
         
         this.skills.push(this.commonService.skills[skill]);
-        }
-  // this.locations = [
-  //   {
-  //     id: 1,
-  //     name: "Chennai"
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Hyderabad"
-  //   }
-  // ]
+      }
   }
   onChange() {
     console.log(this.optionsModel);
 }
   // Material Select Initialization
-
 
 }

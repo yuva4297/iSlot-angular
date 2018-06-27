@@ -13,7 +13,6 @@ export class SkillComponent implements OnInit {
       mySkill:new FormControl('',[Validators.required])
     })
    }
-
   ngOnInit() {
   }
   }

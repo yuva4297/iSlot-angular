@@ -19,18 +19,64 @@
         <div class="alert alert-danger" *ngIf="driveregistrationForm.get('joindate').touched && driveregistrationForm.get('joindate').errors">Please Enter the date</div>
         <div class="input-group center">
             <span class="input-group-addon">
-              <i class="glyphicon glyphicon-time"></i>Start Time
+              <i class="glyphicon glyphicon-time"></i>Slot-1 Start Time
             </span>        
-            <input id="starttime"  type="time" class="form-control" (ngModel)="starttime" name="starttime" formControlName="starttime" placeholder="Start Time">
+            <input id="starttime"  type="time" class="form-control" (ngModel)="slot1starttime" name="starttime" formControlName="slot1starttime" placeholder="Start Time">
           </div>
-          <div class="alert alert-danger" *ngIf="driveregistrationForm.get('starttime').touched && driveregistrationForm.get('starttime').errors">Please Enter the start time</div>          
+          <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot1starttime').touched && driveregistrationForm.get('slot1starttime').errors">Please Enter the start time</div>          
           <div class="input-group center">
               <span class="input-group-addon">
-                <i class="glyphicon glyphicon-time"></i>End Time
+                <i class="glyphicon glyphicon-time"></i>Slot-1 End Time
               </span>        
-              <input id="endtime"  type="time" class="form-control" (ngModel)="endtime" name="endtime" formControlName="endtime" placeholder="End Time">
+              
+              <input id="endtime"  type="time" class="form-control" (ngModel)="slot1endtime" name="endtime" formControlName="slot1endtime" placeholder="End Time">
             </div>  
-            <div class="alert alert-danger" *ngIf="driveregistrationForm.get('endtime').touched && driveregistrationForm.get('endtime').errors">Please Enter the end time</div>
+            <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot1endtime').touched && driveregistrationForm.get('slot1endtime').errors">Please Enter the end time</div>
+            <div class="input-group center">
+                <span class="input-group-addon">
+                  <i class="glyphicon glyphicon-time"></i>Slot-2 Start Time
+                </span>        
+                <input id="starttime"  type="time" class="form-control" (ngModel)="slot2starttime" name="starttime" formControlName="slot2starttime" placeholder="Start Time">
+              </div>
+              <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot2starttime').touched && driveregistrationForm.get('slot2starttime').errors">Please Enter the start time</div>          
+              <div class="input-group center">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-time"></i>Slot-2 End Time
+                  </span>        
+                  
+                  <input id="endtime"  type="time" class="form-control" (ngModel)="slot2endtime" name="endtime" formControlName="slot2endtime" placeholder="End Time">
+                </div>  
+                <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot2endtime').touched && driveregistrationForm.get('slot2endtime').errors">Please Enter the end time</div>
+                <div class="input-group center">
+                    <span class="input-group-addon">
+                      <i class="glyphicon glyphicon-time"></i>Slot-3 Start Time
+                    </span>        
+                    <input id="starttime"  type="time" class="form-control" (ngModel)="slot3starttime" name="starttime" formControlName="slot3starttime" placeholder="Start Time">
+                  </div>
+                  <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot3starttime').touched && driveregistrationForm.get('slot3starttime').errors">Please Enter the start time</div>          
+                  <div class="input-group center">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-time"></i>Slot-3 End Time
+                      </span>        
+                      
+                      <input id="endtime"  type="time" class="form-control" (ngModel)="slot3endtime" name="endtime" formControlName="slot3endtime" placeholder="End Time">
+                    </div>  
+                    <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot3endtime').touched && driveregistrationForm.get('slot3endtime').errors">Please Enter the end time</div>
+                    <div class="input-group center">
+                        <span class="input-group-addon">
+                          <i class="glyphicon glyphicon-time"></i>Slot-4 Start Time
+                        </span>        
+                        <input id="starttime"  type="time" class="form-control" (ngModel)="slot4starttime" name="starttime" formControlName="slot4starttime" placeholder="Start Time">
+                      </div>
+                      <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot4starttime').touched && driveregistrationForm.get('slot4starttime').errors">Please Enter the start time</div>          
+                      <div class="input-group center">
+                          <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-time"></i>Slot-4 End Time
+                          </span>        
+                          
+                          <input id="endtime"  type="time" class="form-control" (ngModel)="slot4endtime" name="endtime" formControlName="slot4endtime" placeholder="End Time">
+                        </div>  
+                        <div class="alert alert-danger" *ngIf="driveregistrationForm.get('slot4endtime').touched && driveregistrationForm.get('slot4endtime').errors">Please Enter the end time</div>
       <div class="input-group center">
           <div class="input-group-prepend">
               <span class="input-group-addon">
