@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from "@angular/router";
@@ -29,4 +29,17 @@ import { AdminService } from './admin.service';
 
 })
 
-export class AdminModule { }
+export class AdminModule implements OnInit {
+  constructor(private adminService: AdminService)
+  {
+
+  }
+
+  ngOnInit()
+  {
+    
+  }
+  }
+
+
+   

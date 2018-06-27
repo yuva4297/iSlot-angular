@@ -18,7 +18,7 @@ export class EventviewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.adminService.fetchCurrentEventDetail("5")
+    this.adminService.fetchCurrentEventDetail(this.adminService.currentEventId)
     .pipe(map(rsp => rsp.json()))
     .subscribe(data => {
       console.log(data);
