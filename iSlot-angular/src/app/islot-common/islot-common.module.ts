@@ -1,5 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { HeaderComponent } from './header/header.component';
+
+
+
+
 import { SkillComponent } from './skill/skill.component';
 import { LocationComponent } from './location/location.component';
 import { FormsModule } from "@angular/forms";
@@ -20,6 +26,7 @@ import { HttpModule, Http } from "@angular/http";
     
   ],
   providers: [Http],
-  declarations: [SkillComponent, LocationComponent]
+  declarations: [SkillComponent, LocationComponent, HeaderComponent]
+
 })
 export class IslotCommonModule { }
