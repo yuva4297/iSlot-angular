@@ -1,0 +1,68 @@
+/* .active{
+    margin-left: 395px;
+    margin-top: 10px;
+    font-size: 22px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+} */
+.slot{
+     margin-top: 10px;
+    font-size: 22px;
+    font-family: cursive;
+    color: white;
+}
+
+.ellipsis{
+    float: right;
+    margin-top: 16   px;
+}
+.navbar-default{
+    margin-top: 3px;
+    margin-left: 125px;
+    width:1076px;
+    height:30px;
+   background-color: black;
+}
+
+.module{
+    width: 40px;
+    height: 40px;
+    padding-top: 20px;
+    border-radius: 50%;
+    float:right;
+    position: relative;
+}
+.chunk{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display:none;
+    position: relative;
+    background-color: lightgrey;
+    min-width:160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+.dropdown-content a{
+    color:black;
+    padding: 5px 5px;
+    text-decoration: none;
+    display:block;
+    font-family: cursive;
+}
+.dropdown-content a:hover{background-color: white;}
+
+.module:hover  .dropdown-content{display: block;}
+.glyphicon-option-vertical:before {
+    content: "\E235";
+    color: white;
+    size:4px;
+}
+.pagetitle{
+    margin-top: 10px;
+    margin-left:50px;
+    font-size: 26px;
+    font-family: cursive;
+    color: white;
+}
