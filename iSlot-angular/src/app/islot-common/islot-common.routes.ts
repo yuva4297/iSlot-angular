@@ -1,4 +1,7 @@
 import { Route } from "@angular/router";
+
+import { HeaderComponent } from "./header/header.component";
+
 import { LocationComponent } from "./location/location.component";
 import { SkillComponent } from "./skill/skill.component";
 
@@ -12,5 +15,9 @@ export const routes: Route[] = [
         path: 'skill',
         component:  SkillComponent
             
+    },
+      {
+        path: 'header',
+        component: HeaderComponent
     }
  ]
