@@ -10,9 +10,11 @@ import { map } from 'rxjs/operators';
 export class EventviewComponent implements OnInit {
   events: any;
   slotsInterviewerCount: Array<number>;
+  updateDetails: Array<any>;
   constructor(private adminService: AdminService) { 
     this.events = {};
     this.slotsInterviewerCount = [];
+    this.updateDetails = [];
   }
 
   ngOnInit() {
@@ -44,6 +46,17 @@ export class EventviewComponent implements OnInit {
       //   console.log("updated event", this.slotsInterviewerCount);
       // }
       console.log(this.events.eventName);
+      for(let slot in this.events.slots)
+      {
+        for(let person in this.events.slots[slot].numberOfInterviewersEnrolled)
+        {
+          if(this.events.slots[slot].numberOfInterviewersEnrolled[person].userId in this.updateDetails)
+          {
+            
+          }
+        }
+
+      }
 
      
     })
