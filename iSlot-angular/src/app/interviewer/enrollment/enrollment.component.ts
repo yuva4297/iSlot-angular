@@ -9,7 +9,10 @@ export class EnrollmentComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
+   
+ }
   }
 
-}
+

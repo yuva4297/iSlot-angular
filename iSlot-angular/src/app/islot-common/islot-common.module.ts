@@ -1,14 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { HeaderComponent } from './header/header.component';
-import { routes } from "./islot-common.routes";
+
+
+
+
+import { SkillComponent } from './skill/skill.component';
+import { LocationComponent } from './location/location.component';
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+
+
 import { RouterModule } from "@angular/router";
+import { routes } from "./islot-common.routes";
+import { HttpModule, Http } from "@angular/http";
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule.forChild(routes)
+    CommonModule, 
+    FormsModule,
+    HttpModule,
+    ReactiveFormsModule,  
+     RouterModule.forChild(routes)
+    
   ],
-  declarations: [HeaderComponent]
+  providers: [Http],
+  declarations: [SkillComponent, LocationComponent, HeaderComponent]
+
 })
 export class IslotCommonModule { }

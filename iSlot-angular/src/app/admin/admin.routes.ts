@@ -1,5 +1,6 @@
 import { Route } from "@angular/router";
 import { DashboardComponent } from "./dashboard/dashboard.component";
+import { DriveregistrationComponent } from "./driveregistration/driveregistration.component";
 import { EventviewComponent } from "./eventview/eventview.component";
 
 export const routes: Route[] = [
@@ -8,6 +9,10 @@ export const routes: Route[] = [
        component: DashboardComponent
    },
    {
+    path: 'driveregistration',
+    component:  DriveregistrationComponent
+},
+{
        path: 'eventview',
        component: EventviewComponent
    }
