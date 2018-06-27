@@ -43,6 +43,6 @@ storeId(id)
 {
   console.log("Evnt Id", id);
   this.adminService.currentEventId = id;
-  this.router.navigate(['/admin/eventview'])
+  this.router.navigate(['/admin/eventview']);
 }
 }
