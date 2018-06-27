@@ -10,6 +10,8 @@ export class InterviewerDashboardComponent implements OnInit {
   recentevents;
   recentcontent;
   upcomingevents;
+  totalPoints;
+  monthPoints;
   event;
   today = new Date();
   dd = this.today.getDate();
@@ -28,6 +30,8 @@ export class InterviewerDashboardComponent implements OnInit {
     this.interviewerService.getEvents();
     this.recentevents = this.interviewerService.recentevents;
     this.upcomingevents = this.interviewerService.upcomingevents;
+    this.totalPoints = this.interviewerService.totalPoints;
+    console.log("Total in interviewer", this.totalPoints);
     console.log("Current Interviewer", this.interviewerService.currentInterviewerData);
 
   }

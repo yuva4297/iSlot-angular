@@ -8,7 +8,7 @@ export class InterviewerService {
   upcomingevents;
   currentInterviewerData;
   eventdate;
-  totlaPoints;
+  totalPoints;
   currentMonthPoints;
   day;
   today = new Date();
@@ -21,16 +21,19 @@ export class InterviewerService {
     this.recentevents = [];
     this.upcomingevents = [];
     this.currentInterviewerData = {};
-    this.totlaPoints = 0;
+    this.totalPoints = 0;
     this.currentMonthPoints = 0;
     this.interviewerEvents = {};
   }
   calculatePoints()
   {
+
       for(let event in this.currentInterviewerData.eventPoints)
       {
         console.log("In points",this.currentInterviewerData.eventPoints[event]);
+        this.totalPoints += this.currentInterviewerData.eventPoints[event].points;
       }
+      console.log("TotalPoint", this.totalPoints);
   }
   calculateEvents()
   {
@@ -88,12 +91,13 @@ export class InterviewerService {
     const url = "https://islot-angular.firebaseio.com/Event.json";
     this.recentevents = [];
     this.upcomingevents = [];
+    this.calculatePoints();
     this.http.get(url).subscribe(rsp => {
       this.data = rsp.json(),
         console.log(rsp.json());
         this.calculateEvents();
         this.separateEvents();
-        this.calculatePoints();
+       
      
     
 

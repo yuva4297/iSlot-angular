@@ -13,6 +13,7 @@ import { EventviewComponent } from './eventview/eventview.component';
 import { EventupdateComponent } from './eventupdate/eventupdate.component';
 import { HttpModule } from "@angular/http";
 import { AdminService } from './admin.service';
+
 @NgModule({
   imports: [
     CommonModule,

@@ -13,6 +13,7 @@ import { Http, HttpModule } from "@angular/http";
 import { RegistrationService } from './registration/registration.service';
 import { AdminService } from './admin/admin.service';
 import { InterviewerService } from './interviewer/interviewer.service';
+import { HeaderComponent } from './islot-common/header/header.component';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDMqATKNGPRrZ0K-dgfKYg74ziXIv_Xs7I',
@@ -25,7 +26,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-   
+   HeaderComponent
     
   ],
   imports: [
