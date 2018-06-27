@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   event;
   today = new Date();
   dd = this.today.getDate();
-  mm = this.today.getMonth()+1;
+  mm = this.today.getMonth() + 1;
   yyyy = this.today.getFullYear();
   
   
@@ -23,14 +23,14 @@ export class DashboardComponent implements OnInit {
     this.recentevents = [];
     this.recentcontent = [];
     this.upcomingevents = [];
-    this.event=this.adminService.data;
+    this.event = this.adminService.data;
   }
 
   ngOnInit() {
     this.adminService.getEvents();
-    this.recentevents=this.adminService.recentevents;
-    this.upcomingevents=this.adminService.upcomingevents;
-    
+    this.recentevents = this.adminService.recentevents;
+    this.upcomingevents = this.adminService.upcomingevents;
+
     // console.log("recentevent",this.adminService.event)
     //    {
     // console.log(event);
