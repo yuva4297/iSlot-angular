@@ -26,7 +26,7 @@
   <p>
     Upcoming Events</p><br>
 
-</div>
+    <div *ngFor="let event of upcomingevents"><br>
     <button class="eventBox" (click)="storeId(event.eventId)" [style.border-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</button>
   </div> <br>
 </div>

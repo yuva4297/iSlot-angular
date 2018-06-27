@@ -5,6 +5,7 @@ import { AngularFireAuth} from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { RegistrationService } from '../../registration.service';
 import { map } from "rxjs/operators";
+import { InterviewerService } from '../../../interviewer/interviewer.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup
   error: any;
   user:any;
-    constructor(public af: AngularFireAuth,private router: Router, private registrationService: RegistrationService) {
+    constructor(public af: AngularFireAuth,private router: Router, private registrationService: RegistrationService, private interviewerService: InterviewerService) {
 
     //   this.af.auth.(auth => { 
     //   if(auth) {
@@ -54,11 +55,12 @@ export class LoginComponent implements OnInit {
           console.log(this.user.userId);
           if(this.user.role=="interviewer")
           {
+            this.interviewerService.currentInterviewerData = this.user;
             this.router.navigate(['/interviewer'])
           }
           if(this.user.role == "admin")
           {
-
+          
             this.router.navigate(['/admin'])
           }
         });

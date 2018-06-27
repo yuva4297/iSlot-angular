@@ -28,6 +28,7 @@ export class InterviewerDashboardComponent implements OnInit {
     this.interviewerService.getEvents();
     this.recentevents = this.interviewerService.recentevents;
     this.upcomingevents = this.interviewerService.upcomingevents;
+    console.log("Current Interviewer", this.interviewerService.currentInterviewerData);
 
   }
 }
