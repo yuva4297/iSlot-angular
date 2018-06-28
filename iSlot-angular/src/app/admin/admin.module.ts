@@ -14,6 +14,7 @@ import { EventupdateComponent } from './eventupdate/eventupdate.component';
 import { HttpModule } from "@angular/http";
 import { AdminService } from "./admin.service";
 import { StatsComponent } from './stats/stats.component';
+import {IslotCommonModule } from '../islot-common/islot-common.module';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +23,8 @@ import { StatsComponent } from './stats/stats.component';
     MultiselectDropdownModule,
     ReactiveFormsModule,
     MatButtonModule, MatCheckboxModule,MatTabsModule, 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),IslotCommonModule 
+
   ],
   declarations: [DashboardComponent, DriveregistrationComponent,  EventviewComponent, EventupdateComponent, StatsComponent]
 

@@ -9,6 +9,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { NgModel, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
+import { LogoutComponent } from "../islot-common/logout/logout.component";
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDMqATKNGPRrZ0K-dgfKYg74ziXIv_Xs7I',
@@ -30,6 +31,6 @@ export const firebaseConfig = {
 
     RouterModule.forChild(routes)
   ],
-  declarations: [LandingPageComponent, RegisterAdminComponent, RegisterInterviewerComponent, LoginComponent]
+  declarations: [LandingPageComponent, RegisterAdminComponent, RegisterInterviewerComponent, LoginComponent, LogoutComponent]
 })
 export class RegistrationModule { }
