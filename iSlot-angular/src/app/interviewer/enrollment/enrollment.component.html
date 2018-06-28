@@ -1,72 +1,30 @@
 <h3>Event-Enrollment</h3>
 <div> <div class="groove">
   <br>
-  <div class="groove1"> <div class="firstSlot">
+  <div class="groove1" *ngFor="let slot of events.slots"> 
+      <div class="firstSlot">
       <div class="timeDetails">
-          <p id="time">9AM - 11AM</p>
+          <p id="time">{{slot.startTime}} - {{slot.endTime}}</p>
           <span class="dot" id="round">
-              <span style="font-size:22px">3</span>
+              <span style="font-size:22px">{{slot.numberOfInterviewersEnrolled.length}}</span>
           </span>
           <div> <label class="switch">
-                  <input type="checkbox"  >
-                  <span class="slider round"></span> </label>
-          </div><div class="interviews">  
-              <div for="interviewsTaken">Total Interviews Taken
-               <input type="text" id="interviewsTaken"></div>
-              </div>   </div>    
+                <!-- slot.isEnrolled?'checked':'' -->
+                  <input type="checkbox" (change)="updateEvent($event,slot.slotId)"  [disabled]="eventStatus=='recent' ? true : null" >
+                  <span class="slider round" ></span> </label>
+          </div>
+          <div class="interviews">  
+            <div for="interviewsTaken"> 
+               <input type="text" id="interviewsTaken" [disabled]="events.isClosed=='true' ? true : null || eventStatus == 'recent' ? null : true">
+            </div>
+        </div>  
      
+    </div>
+
   </div>
 </div>
-  <br>
-  <div class="groove1"> <div class="firstSlot">
-      <div class="timeDetails">
-          <p id="time">11AM - 2PM</p>
-          <span class="dot" id="round">
-              <span style="font-size:22px">3</span>
-          </span>
-          <div> <label class="switch">
-                  <input type="checkbox" >
-                  <span class="slider round"></span></label>
-          </div><div class="interviews">  
-              <div for="interviewsTaken">Total Interviews Taken
-               <input type="text" id="interviewsTaken"></div>
-              </div>   </div>    
-     
-  </div></div>
-  <br>
-  <div class="groove1"><div class="firstSlot">
-      <div class="timeDetails">
-          <p id="time">2PM - 4M</p>
-          <span class="dot" id="round">
-              <span style="font-size:22px">3</span>
-          </span>
-          <div> <label class="switch">
-                  <input type="checkbox" >
-                  <span class="slider round"></span></label>
-          </div><div class="interviews">  
-              <div for="interviewsTaken">Total Interviews Taken
-               <input type="text" id="interviewsTaken"></div>
-              </div>   </div>    
-     
-  </div> </div>
-  <br>
-  <div class="groove1"><div class="firstSlot">
-      <div class="timeDetails">
-          <p id="time">4PM - 6PM</p>
-          <span class="dot" id="round">
-              <span style="font-size:22px">3</span>
-          </span>
-          <div> <label class="switch">
-                  <input type="checkbox" >
-                  <span class="slider round"></span></label>
-          </div><div class="interviews">  
-              <div for="interviewsTaken">Total Interviews Taken
-               <input type="text" id="interviewsTaken"></div>
-              </div>   </div>    
-     
-  </div> </div>
-  
-</div>
 
-<button type="button" class="btn btn-success" id="button">Update</button>
+
+<button type="submit" class="btn btn-success" id="button">Update</button>
+
 </div>

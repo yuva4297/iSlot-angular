@@ -9,6 +9,7 @@ export class InterviewerService {
   currentInterviewerData;
   eventdate;
   totalPoints;
+  eventStatus;
   currentMonthPoints;
   day;
   today = new Date();
@@ -17,6 +18,7 @@ export class InterviewerService {
   yyyy = this.today.getFullYear();
   data;
   interviewerEvents;
+  currentEventId;
   constructor(private http: Http) {
     this.recentevents = [];
     this.upcomingevents = [];
@@ -24,6 +26,8 @@ export class InterviewerService {
     this.totalPoints = 0;
     this.currentMonthPoints = 0;
     this.interviewerEvents = {};
+    this.currentEventId = '';
+    this.eventStatus= '';
   }
   calculatePoints()
   {
@@ -105,4 +109,25 @@ export class InterviewerService {
 
     
   }
+  fetchCurrentEventDetail(eventId)
+ {
+   const entity ="eventId"
+   const url = `https://islot-angular.firebaseio.com/Event.json?orderBy=\"${entity}\"&equalTo=\"${eventId}\"`;
+   console.log(url);
+   return this.http.get(url);
+ }
+ updateSlots(slot, eventId)
+ {
+   console.log("slot Detail", slot);
+   console.log("eventId", eventId);
+   var slots;
+   slots ={
+      "slots": slot
+   } 
+   console.log("slots",slots);
+   const url = `https://islot-angular.firebaseio.com/Event/${eventId}.json`;
+   this.http.patch(url, slots).subscribe(rsp =>{
+    console.log(rsp.json());})
+
+ }
 }

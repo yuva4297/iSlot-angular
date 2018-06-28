@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <div class="main-container">
     
       <!-- <nav class="navbar navbar-default">
@@ -23,11 +23,11 @@
   Recent Events
 </p><br>
 <div *ngFor="let event of recentevents"><br>
-  <button class="eventBox" [style.border-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</button>
+  <button class="eventBox" (click)="storeEventId(event.eventId, 'recent')" [style.border-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</button>
 </div> <br>
 <p>
   Upcoming Events</p><br>
 <div *ngFor="let event of upcomingevents"><br>
-  <button class="eventBox" [style.border-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</button>
+  <button class="eventBox" (click)="storeEventId(event.eventId, 'upcoming')" [style.border-color]="event.isClosed == 'true' ? 'black' : 'red' ">{{event.eventName}}</button>
 </div> <br>
 </div>

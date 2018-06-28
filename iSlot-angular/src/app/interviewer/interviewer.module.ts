@@ -4,7 +4,7 @@ import { InterviewerDashboardComponent } from './interviewer-dashboard/interview
 import { RouterModule } from "@angular/router";
 import { routes } from "./interviewer.routes";
 import { EnrollmentComponent } from './enrollment/enrollment.component';
-import { HeaderComponent } from '../islot-common/header/header.component';
+
 
 
 @NgModule({
@@ -12,6 +12,6 @@ import { HeaderComponent } from '../islot-common/header/header.component';
     CommonModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [InterviewerDashboardComponent, EnrollmentComponent, HeaderComponent]
+  declarations: [InterviewerDashboardComponent, EnrollmentComponent]
 })
 export class InterviewerModule { }
