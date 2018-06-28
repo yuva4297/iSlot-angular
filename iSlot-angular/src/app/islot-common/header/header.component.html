@@ -3,18 +3,18 @@
     <div class="navbar-header">
       <ul class="nav navbar-nav">
         <li class="slot">iSlot</li> 
-       <li class="pagetitle">   Admin Dashboard</li>
+       <li class="pagetitle"> </li>
       </ul>
     </div>
     <div class="module">
         <i class="glyphicon glyphicon-option-vertical ellipsis"></i>
       <div class="chunk">
         <div class="dropdown-content">
-          <a href="#">Update Profile</a>
-          <a href="#">Change Password</a>
+          <a    [routerLink]="['update-profile']">Update Profile</a>
+          <a   [routerLink]="['change-password']">Change Password</a>
           <a href="#">Skill Management</a>
           <a href="#">Location Management</a>
-          <a href="#">Log Out</a>
+          <a [routerLink]="['logout']">Log Out</a>
         </div>
       </div>
     </div>

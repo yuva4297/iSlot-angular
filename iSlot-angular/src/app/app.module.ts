@@ -25,8 +25,7 @@ export const firebaseConfig = {
 };
 @NgModule({
   declarations: [
-    AppComponent,
-   HeaderComponent
+    AppComponent
     
   ],
   imports: [

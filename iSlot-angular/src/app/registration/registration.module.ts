@@ -10,6 +10,7 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { NgModel, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { HttpModule } from '@angular/http';
+import { LogoutComponent } from "../islot-common/logout/logout.component";
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyDMqATKNGPRrZ0K-dgfKYg74ziXIv_Xs7I',

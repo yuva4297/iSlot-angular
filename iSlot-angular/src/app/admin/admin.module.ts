@@ -11,35 +11,30 @@ import {MatTabsModule} from '@angular/material/tabs';
 // import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { EventviewComponent } from './eventview/eventview.component';
 import { EventupdateComponent } from './eventupdate/eventupdate.component';
-import { HttpModule } from "@angular/http";
-import { AdminService } from './admin.service';
 
+import { AdminService } from "./admin.service";
+import { StatsComponent } from './stats/stats.component';
+import {IslotCommonModule } from '../islot-common/islot-common.module';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HttpModule,
+
     MultiselectDropdownModule,
     ReactiveFormsModule,
     MatButtonModule, MatCheckboxModule,MatTabsModule, 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),IslotCommonModule 
+
   ],
-  declarations: [DashboardComponent, DriveregistrationComponent,  EventviewComponent, EventupdateComponent],
-  providers: [AdminService]
+  declarations: [DashboardComponent, DriveregistrationComponent,  EventviewComponent, EventupdateComponent,StatsComponent],
+
+  
 
 
 })
 
-export class AdminModule implements OnInit {
-  constructor(private adminService: AdminService)
-  {
-
-  }
-
-  ngOnInit()
-  {
-    
-  }
+export class AdminModule {
+ 
   }
 
 
